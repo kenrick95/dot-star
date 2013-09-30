@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dots and Boxes*</title>
+<style type="text/css">
+	@import "dot-star.css";
+	#log {
+		font-family:"Courier New", Courier, monospace;
+		height:15em;
+		overflow:auto;
+		float:left;
+		width:180px;
+	}
+</style>
+</head>
+<body>
+<div id="header" align="center" >
+  <div id="title" align="left" >
+    <div id="lfloat"> <span id="realtitle">Dots and Boxes*</span>
+      <div id="footer"> This work ("Dots and Boxes*" game in JavaScript) is coded by Kenrick.<br />
+	  	* = peer-to-peer
+        <hr />
+        Changelog:<br />
+        2011-05:<br />
+        &emsp;Project started <br />
+        2011-06-04:<br />
+        &emsp;Version 1.0.0 beta<br />
+        2011-06-05:<br />
+        &emsp;Version 1.0.0 beta 2<br />
+        2013-09-28:<br />
+        &emsp;Version 1.1.0 alpha<br />
+		
+		<div id="log">
+		</div>
+      </div>
+    </div>
+    <div id="untitle" > Message: <span id="message"></span>
+      <div id="rfloat" >
+        <form id="bantuform" name="bantuform">
+          <input name="aturn" id="aturn" value="a" size="1" maxlength="1" />
+          <input name="amax" id="amax" value="a" size="1" maxlength="1" />
+        </form>
+        <form id="userform" name="userform">
+          <input name="reload" type="button" id="reload" title="Start a new game" value="Start a new game" onclick="reloadpage();"/>
+        </form>
+        <hr />
+        <div id="score">
+          <table class="bigtext centertext" width="100%" align="center">
+            <tr>
+              <td colspan="3" style="font-size:58%" id="yname">X</td>
+            </tr>
+            <tr>
+              <td colspan="3" style="font-size:58%" id="sboard">Scoreboard</td>
+            </tr>
+            <tr>
+              <td id="aname" class="abox jtextfill">A</td>
+              <td id="vs" style="font-size:58%">VS</td>
+              <td id="bname" class="bbox jtextfill">B</td>
+            </tr>
+            <tr>
+              <td id="asc">0</td>
+              <td style="font-size:58%">-</td>
+              <td id="bsc">0</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="kosong"></div>
+<div id="utama" align="center">
+  <!--
+Table starts
+-->
+  <table border="0" cellspacing="0" cellpadding="0" class="smalltext" id="maintable">
+    <tr>
+      <td width="30" height="30" align="center" valign="middle" class="bigtext"></td>
+    </tr>
+  </table>
+  <!--
+End of table
+-->
+</div>
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="p2p-client.js"></script>
+<script type="text/javascript" src="dot-star.js"></script>
+<script type="text/javascript" src="dot-star-webrtc.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+@charset "utf-8";
+.line {
+	background-color:#AAAAAA !important;
+	cursor:default;
+}
+.pline {
+	cursor:pointer;
+}
+.abox {
+	background-color:#FF6600 !important;
+	width:50px;
+}
+.bbox {
+	background-color:#6666FF !important;
+	width:50px;
+}
+#aname, #bname {
+	width:50px;
+	max-width:50px;
+}
+#bantuform {
+	float:right;
+	display:none;
+}
+#userform {
+	margin-top:35px;
+	width: 180px;
+	color:#000000;
+	text-align:center;
+}
+#footer {
+	width:180px;
+	color:#000000;
+	margin-top:35px;
+	font-size:12px;
+	background-color:#FFFF99;
+}
+#header {
+	position:absolute;
+	top:0;
+	left:0;
+	background-color:#DDDDDD;
+	height:41px;
+	width:100%;
+}
+#title {
+	margin-top:10px;
+	width:980px;
+}
+#message {
+	font-family:"Courier New", Courier, monospace;
+	width:400px;
+	color:#000099;
+}
+#untitle {
+	margin-left:170px;
+	margin-bottom:0px;
+	height: 30px;
+	background-color:#FDFDFD;
+}
+#kosong {
+	height:50px;
+}
+#realtitle {
+	font-size:18px;
+	font-weight:bold;
+	padding-left:10px;
+}
+#rfloat {
+	float:right;
+}
+#lfloat {
+	float:left;
+}
+#maintable {
+	background-color:#FFFFFF;
+}
+.sdot {
+	background-color:#000000
+}
+.smalltext {
+	font-size:5px;
+}
+.bigtext {
+	font-size:50px;
+}
+.centertext {
+	text-align:center;
+}
+.turn {
+	background-color:#00CC00;
+}
+body {
+	font-family: Arial Unicode MS;
+	font-size: 16px;
+	color: #000000;
+	background-color:Azure;
+}
+a:link {
+	color: #3399CC;
+}
+a:visited {
+	color: #33CCFF;
+}
+a:hover {
+	color: #3399FF;
+}
+a:active {
+	color: #3366FF;
+}
+
