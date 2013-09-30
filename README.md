@@ -1,16 +1,17 @@
 dot-star
 ========
 
-dot-star is a [Dots and Boxes](https://en.wikipedia.org/wiki/Dots_and_Boxes) web-based 2-player peer-to-peer game.
+"dot-star" is a [Dots and Boxes](https://en.wikipedia.org/wiki/Dots_and_Boxes) web-based 2-player peer-to-peer game.
 
 
-# Requirement
-Tested to be working on Firefox 25.
+## Requirement
+Don't know yet, but tested to be working on Firefox 25.
 
-# Technically
+## Technically
 This game uses
-* webRTC technology
+* [webRTC technology](https://hacks.mozilla.org/2013/03/webrtc-data-channels-for-great-multiplayer/)
 * [jQuery](jquery.com)
 * [p2p](https://github.com/js-platform/p2p)
 
-
+##Showcase
+You can test this game at [this page](https://rawgithub.com/kenrick95/dot-star/master/dot-star.html).
