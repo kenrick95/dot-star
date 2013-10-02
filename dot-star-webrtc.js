@@ -11,7 +11,7 @@ function log(who, msg, time) {
   if (who == null) {
 	  who = "Information";
   }
-  format_msg = "";
+  format_msg = ">> ";
   format_msg += who;
   format_msg += " &lt;";
   format_msg += readable_time;
@@ -22,7 +22,7 @@ function log(who, msg, time) {
   msg_before = who;
   $("#log").html($("#log").html() + format_msg);
   console.log(who + " <" + time + "> " + msg);
-  //scroll_bottom();
+  scroll_bottom();
 }
 
 /*
@@ -72,6 +72,12 @@ peer.onconnection = function(connection) {
   log(null, 'connected: ' + connection.id);
   connections[connection.id] = connection;
   connected ++;
+  
+  game.message = "Peer connected";
+  update();
+  game.message = "It's " + game.a.name + "'s turn";
+  update();
+  
   connection.ondisconnect = function() {
 	if (connected_name[connection.id] == null)
     	log(null,'disconnected: ' + connection.id)
@@ -79,6 +85,8 @@ peer.onconnection = function(connection) {
     	log(null,'disconnected: ' + connected_name[connection.id] + ' ['+ connection.id +']');
     delete connections[connection.id];
 	connected--;
+	game.message = "Game Over: Peer disconnected";
+	update();
   };
   connection.onerror = function(error) {
     console.error(error);
@@ -93,18 +101,23 @@ peer.onconnection = function(connection) {
 	  console.log(msg.data);
 	  msg_data = JSON.parse(msg.data);
 	  console.log(msg_data);
+	  
+	  msg_data_data  = msg_data.msg;
 	  if (connected_name[connection.id] == null) {
 	  	log(null,  "'" + connection.id + "' is '" + msg_data.name + "'");
 	  	connected_name[connection.id] = msg_data.name;
+		
 	  } else if (connected_name[connection.id] != msg_data.name) {
 	  	log(null,  "'" + connected_name[connection.id] + " has changed name to '" + msg_data.name + "'");
 	  	connected_name[connection.id] = msg_data.name;
 	  }
-	  msg_data_data  = msg_data.msg;
 	  
 	  game.turn = msg_data.msg.turn;
-	  game.a.name = msg_data.msg.a.name;
-	  game.b.name = msg_data.msg.b.name;
+	  if (name == "b") {
+		game.a.name = msg_data.msg.a.name;	
+	  } else if (name == "a") {
+		game.b.name = msg_data.msg.b.name;	
+	  }
 	  game.move = msg_data.msg.move;
 
 	  log(connected_name[connection.id], JSON.stringify(msg_data_data));
@@ -139,7 +152,9 @@ if(hosting) { // host
 
     //var div = document.getElementById('host');
     //div.innerHTML = '<a href="' + url.join('?') + '">connect</a>';
-	log(null, 'Send <a href="' + url.join('?') + '">this link</a> to other peers so that they can connect to you');
+	log(null, 'Send <a href="' + url.join('?') + '">this link</a> to other peer so that he/she can connect to you');
+	game.message = 'Send <a href="' + url.join('?') + '">this link</a> to other peer';
+	update();
   }
   name = "a";
 } else { // client
@@ -149,7 +164,7 @@ if(hosting) { // host
 
 // onload
 window.onload = function() {
-	log(null, "Peer-to-peer connection with WebRTC; works in Firefox 22+ & Chrome 23+ only.");
+	log(null, "Peer-to-peer Dots and Boxes game with WebRTC; works in Firefox 25");
 };
 
 // disconnect before unload
@@ -160,13 +175,13 @@ window.onbeforeunload = function() {
   });
   peer.close();
 };
-/*
+
 function scroll_bottom() {
-	// Scroll to bottom of #chat-message
-	var chat_area = document.getElementById("chat-message");
-	chat_area.scrollTop = chat_area.scrollHeight;
+	// Scroll to bottom of #log
+	var log_area = document.getElementById("log");
+	log_area.scrollTop = log_area.scrollHeight;
 }
-*/
+
 function send() {
     
 	

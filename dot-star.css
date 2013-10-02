@@ -1,4 +1,37 @@
 @charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+* {
+	padding: 0;
+	margin: 0;	
+}
+body {
+	font-family: "PT Sans", "Arial Unicode MS", sans-serif;
+	font-size: 16px;
+	color: #000000;
+	background-color:#E8EDE0;
+}
+/* Main Game class */
+.game_elem {
+	text-align:center;
+	vertical-align:middle;	
+}
+.sdot {
+	background-color:#000000;
+	width: 8px;
+	height: 8px;
+}
+.hline {
+	width: 50px;
+	height: 8px;
+}
+.vline {
+	width: 8px;
+	height: 50px;
+}
+.box {
+	width: 50px;
+	height: 50px;
+}
 .line {
 	background-color:#AAAAAA !important;
 	cursor:default;
@@ -7,20 +40,83 @@
 	cursor:pointer;
 }
 .abox {
-	background-color:#FF6600 !important;
-	width:50px;
+	background-color:#F78D3F;
 }
 .bbox {
-	background-color:#6666FF !important;
-	width:50px;
+	background-color:#2BBBD8;
 }
-#aname, #bname {
-	width:50px;
-	max-width:50px;
+
+
+/* header */
+#header {
+	position:absolute;
+	top:0;
+	left:0;
+	background-color:#102E37;
+	height:45px;
+	width:100%;
 }
-#bantuform {
+#header-main {
+	width: 960px;
+	margin: auto;	
+}
+/* Those at the tops */
+#details {
 	float:right;
-	display:none;
+	margin-top:-42px;
+	color: white;
+}
+#details a{
+	color: white;
+	text-decoration:none;
+}
+#details #toggle-log {
+	cursor:pointer;
+}
+#title {
+	line-height:45px;
+	font-size:1.5em;
+	text-align:center;
+	color: white;
+	font-family: 'PT Sans', sans-serif;
+}
+#message-wrapper {
+	margin: auto;
+	text-align:center;
+	background: #102E37;
+	border-radius: 0 0 10px 10px;
+	width:350px;
+}
+#message {
+	font-family:"Courier New", Courier, monospace;
+	width:100%;
+	color: white;
+	line-height:1em;
+	font-size:0.8em;
+}
+#message a {
+	color:white;	
+}
+
+/* Those at the left */
+#menu-left {
+	float: left;
+	width: 180px;
+}
+#log {
+	font-family:"Courier New", Courier, monospace;
+	height:15em;
+	overflow:auto;
+	float:left;
+	width:100%;
+	font-size:8pt;
+	margin-top:0.5em;
+}
+
+/* Those at the right */
+#menu-right {
+	float: right;
+	width: 180px;
 }
 #userform {
 	margin-top:35px;
@@ -28,55 +124,37 @@
 	color:#000000;
 	text-align:center;
 }
-#footer {
-	width:180px;
-	color:#000000;
-	margin-top:35px;
-	font-size:12px;
-	background-color:#FFFF99;
+#aname {
+	width:120px;
+	max-width:120px;
 }
-#header {
-	position:absolute;
-	top:0;
-	left:0;
-	background-color:#DDDDDD;
-	height:41px;
+#bname {
+	width:120px;
+	max-width:120px;
+}
+
+/* main */
+#main-wrapper {
 	width:100%;
 }
-#title {
-	margin-top:10px;
-	width:980px;
-}
-#message {
-	font-family:"Courier New", Courier, monospace;
-	width:400px;
-	color:#000099;
-}
-#untitle {
-	margin-left:170px;
-	margin-bottom:0px;
-	height: 30px;
-	background-color:#FDFDFD;
-}
-#kosong {
-	height:50px;
-}
-#realtitle {
-	font-size:18px;
-	font-weight:bold;
-	padding-left:10px;
-}
-#rfloat {
-	float:right;
-}
-#lfloat {
-	float:left;
+#main-content {
+	width:960px;
+	margin:auto;
+	margin-top:80px;
+	text-align:center;
 }
 #maintable {
-	background-color:#FFFFFF;
+	background-color:rgba(255, 255, 255, 0.5);
+	margin:auto;
 }
-.sdot {
-	background-color:#000000
+
+
+/* (may be) useful class */
+.rfloat {
+	float:right;
+}
+.lfloat {
+	float:left;
 }
 .smalltext {
 	font-size:5px;
@@ -88,24 +166,8 @@
 	text-align:center;
 }
 .turn {
-	background-color:#00CC00;
+	background-color:#FCD271;
 }
-body {
-	font-family: Arial Unicode MS;
-	font-size: 16px;
-	color: #000000;
-	background-color:Azure;
-}
-a:link {
-	color: #3399CC;
-}
-a:visited {
-	color: #33CCFF;
-}
-a:hover {
-	color: #3399FF;
-}
-a:active {
-	color: #3366FF;
-}
+
+
 
