@@ -11,7 +11,6 @@ TO DO!!!!
 $(document).ready(function() {
 	initial();
 	promptu();
-	$("#yname").html(name);
 	$("#toggle-log").click(function (){
 		$("#log").toggle();
 	});
@@ -28,6 +27,7 @@ game = {
 	},
 	message: "",
 	max_score: 0,
+	tw: 0,
 	move: {
 		type: "", // x or y
 		x: "",    // coord x
@@ -48,6 +48,7 @@ function initial() {
 		},
 		message: "",
 		max_score: 0,
+		tw: 0,
 		move: {
 			type: "", // x or y
 			x: "",    // coord x
@@ -233,20 +234,39 @@ function invertTurn() {
 }
 function promptu() {
 	var tw = 3;
-	if ((isNaN(tw))||(tw>10)||(tw<1)) {
-		while ((isNaN(tw))||(tw>10)||(tw<1)) {
-			tw = prompt('Input table width \n(1 ≤ width ≤ 10)', 3);
-		}
-	}
+	
 	var anam = 'A';
 	if (name == "a") anam = prompt('Input your name','A');
 	game.a.name = anam;
+	
+	if (name == "a")
+	{
+		tw = 3;
+		if ((isNaN(tw))||(tw>10)||(tw<1)) {
+			while ((isNaN(tw))||(tw>10)||(tw<1)) {
+				tw = prompt('Input table width \n(1 ≤ width ≤ 10)', 3);
+			}
+		}
+	}
+	game.tw = tw;
 	
 	var bnam = 'B';//prompt('Input player 2 name','B');
 	if (name == "b") bnam = prompt('Input your name','B');
 	game.b.name = bnam;
 	
+	//send(1);
 	
+	draw_table(game.tw);
+	
+	game.max_score = tw*tw;
+	var sb="Scoreboard<br />"
+	$('#sboard').html(sb + "("+tw+"×"+tw+")");
+	
+	$('#aname').html(anam);
+	$('#bname').html(bnam);
+	update();
+}
+function draw_table(tw) {
 	var maint="";
 	var ri = 0;
 	var rj = 0;
@@ -260,10 +280,10 @@ function promptu() {
 			
 			if (i%2==1) {
 				if (j%2==1) {
-					maint=maint+"<td valign='middle' class='sdot game_elem'>&nbsp;</td></td>";
+					maint=maint+"<td class='sdot game_elem'>&nbsp;</td></td>";
 				} else {
 					rj=rj+1;
-					maint=maint+"<td valign='middle' class='pline hline game_elem' id='linex"+rj+ri+"' onclick='x("+rj+","+ri+")'>&nbsp;</td>";
+					maint=maint+"<td class='pline hline game_elem' id='linex"+rj+ri+"' onclick='x("+rj+","+ri+")'>&nbsp;</td>";
 				}
 			} else {
 				if (j%2==1) {
@@ -276,13 +296,5 @@ function promptu() {
 		}
 		maint=maint+"</tr>";
 	}
-	game.max_score = tw*tw;
-	$("#amax").val(tw*tw);
 	$("#maintable").html(maint);
-	var sb="Scoreboard<br />"
-	$('#sboard').html(sb+"("+tw+"×"+tw+")");
-	
-	$('#aname').html(anam);
-	$('#bname').html(bnam);
-	update();
 }

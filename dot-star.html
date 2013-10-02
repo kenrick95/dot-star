@@ -36,21 +36,7 @@
 			<form id="userform" name="userform">
 				<input name="reload" type="button" id="reload" title="Start a new game" value="Start a new game" onclick="reloadpage();"/>
 			</form>-->
-			<div id="score">
-			  <table class="bigtext centertext" width="100%" align="center">
-				<tr>
-				  <td colspan="3" style="font-size:58%" id="sboard">Scoreboard</td>
-				</tr>
-				<tr>
-				  <td id="aname" class="abox">A</td>
-				  <td id="asc">0</td>
-				</tr>
-				<tr>
-				  <td id="bname" class="bbox">B</td>
-				  <td id="bsc">0</td>
-				</tr>
-			  </table>
-			</div>
+			
 		</div>
 	
 		<div id="message-wrapper"><span id="message"></span></div>
@@ -64,6 +50,28 @@
 				<td>&nbsp;</td>
 			</tr>
 		</table>
+	</div>
+</div>
+<div id="footer-wrapper">
+	<div id="footer">
+		<div id="score" class="bigtext">
+			<div id="aname-wrapper" class="abox">
+				<div id="aname" class="abox">
+					A
+				</div>
+				<div id="asc" class="centertext">
+					0
+				</div>
+			</div>
+			<div id="bname-wrapper" class="bbox">
+				<div id="bname" class="bbox">
+					B
+				</div>
+				<div id="bsc" class="centertext">
+					0
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>

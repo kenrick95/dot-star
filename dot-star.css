@@ -118,20 +118,7 @@ body {
 	float: right;
 	width: 180px;
 }
-#userform {
-	margin-top:35px;
-	width: 180px;
-	color:#000000;
-	text-align:center;
-}
-#aname {
-	width:120px;
-	max-width:120px;
-}
-#bname {
-	width:120px;
-	max-width:120px;
-}
+
 
 /* main */
 #main-wrapper {
@@ -148,6 +135,47 @@ body {
 	margin:auto;
 }
 
+/* footer */
+#footer-wrapper {
+	position:absolute;
+	bottom:0;
+	left:0;
+	background-color:#102E37;
+	height:42px;
+	width:100%;
+}
+#footer {
+	width: 960px;
+	margin: auto;
+	margin-bottom:0;
+	padding:0;	
+}
+#aname {
+	width:70%;
+	float:left;
+	text-align:left;
+	padding-left:1em;
+	height:42px;
+}
+#bname {
+	width:70%;
+	float:right;
+	text-align:right;
+	padding-right:1em;
+	height:42px;
+}
+#aname-wrapper {
+	width: 50%;
+	float:left;
+	height:42px;
+}
+#bname-wrapper {
+	width: 50%;
+	float:right;
+}
+#asc, #bsc {
+	height:42px;
+}
 
 /* (may be) useful class */
 .rfloat {
@@ -160,7 +188,7 @@ body {
 	font-size:5px;
 }
 .bigtext {
-	font-size:50px;
+	font-size:2em;
 }
 .centertext {
 	text-align:center;
