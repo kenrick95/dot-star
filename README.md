@@ -14,4 +14,4 @@ This game uses
 * [p2p](https://github.com/js-platform/p2p)
 
 ##Showcase
-You can test this game at [this page](https://rawgithub.com/kenrick95/dot-star/master/dot-star.html).
+You can test this game at [this page](http://rawgithub.com/kenrick95/dot-star/master/dot-star.html).
