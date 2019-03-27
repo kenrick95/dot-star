@@ -13,5 +13,6 @@ This game uses
 * [jQuery](jquery.com)
 * [p2p](https://github.com/js-platform/p2p)
 
-##Showcase
-You can test this game at [this page](http://rawgithub.com/kenrick95/dot-star/master/dot-star.html).
+## Demo
+
+You can test this game at [this page](https://kenrick95.github.io/dot-star/dot-star.html). (no longer works)
